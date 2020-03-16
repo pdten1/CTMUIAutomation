@@ -11,8 +11,8 @@ namespace CTMUIAutomation.Feature_Definitions
     public sealed class Hooks
     {
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
-        [BeforeTestRun]
-        public static void BeforeTestRun()
+        [BeforeScenario]
+        public void BeforeTestRun()
         {
             //TODO: implement logic that has to run before executing each scenario
             Console.WriteLine("\t Navigating to url");
@@ -21,12 +21,12 @@ namespace CTMUIAutomation.Feature_Definitions
             Library.driver.Navigate().GoToUrl(Library.GetAppSettingValue("URL"));
         }
 
-        [AfterTestRun]
-        public static void AfterTestRun()
-        {
-            //TODO: implement logic that has to run after executing each scenario
-            Library.driver.Close();
-        }
+        //[AfterTestRun]
+        //public static void AfterTestRun()
+        //{
+        //    //TODO: implement logic that has to run after executing each scenario
+        //    Library.driver.Close();
+        //}
 
         [AfterScenario]
         public void AfterScenario()
